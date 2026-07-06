@@ -17,7 +17,7 @@
 - Arduino App Lab
 
 ## Demo
-Video: upload later
+Video: https://youtu.be/c5WNGrSL7Ug
 
 ## What I Learned
 - Servo movement timing
