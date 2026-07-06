@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <title>ShunSpider</title>
+</head>
+<body>
+
+<h1>Hexapod Control</h1>
+  
+
+<button id="btn">Send Message</button>
+  
+<button id="standBtn">Stand</button>
+<button id="sitBtn">Sit</button>
+
+<button id="walkBtn">Walk_Forward</button>
+<button id="walkbackBtn">Walk_Backward</button>
+
+<button id="spinleftBtn">Spin_Left</button>
+<button id="spinrightBtn">Spin_Right</button>
+<button id="stand90Btn">Stand_90</button>
+<hr> 
+<script>
+  const socket = io();
+  
+    document.getElementById("btn").onclick = () => {
+  socket.emit("hello", {name: "Arduino"});
+  };
+  
+  socket.on("connect", () => {
+    console.log("Connected to server");
+  });
+
+  document.getElementById("standBtn").onclick = () => {
+    socket.emit("cmd", "standBtn");
+  };
+
+  document.getElementById("sitBtn").onclick = () => {
+    socket.emit("cmd", "sitBtn");
+  };
+
+  document.getElementById("walkBtn").onclick = () => {
+    socket.emit("cmd", "walkBtn");
+  };
+
+  document.getElementById("walkbackBtn").onclick = () => {
+    socket.emit("cmd", "walkbackBtn");
+  };
+
+  document.getElementById("spinleftBtn").onclick = () => {
+    socket.emit("cmd", "spinleftBtn");
+  };
+
+  document.getElementById("spinrightBtn").onclick = () => {
+    socket.emit("cmd", "spinrightBtn");
+  };
+
+   document.getElementById("stand90Btn").onclick = () => {
+    socket.emit("cmd", "stand90Btn");
+  };
+</script>
+
+
+</body>
+</html>
