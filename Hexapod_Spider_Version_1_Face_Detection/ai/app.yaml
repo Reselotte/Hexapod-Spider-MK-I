@@ -1,0 +1,9 @@
+name: AI
+description: ""
+ports: []
+bricks:
+- arduino:video_object_detection:
+    variables:
+      EI_OBJ_DETECTION_MODEL: /home/arduino/.arduino-bricks/ei-models/test2-linux-aarch64-v3.eim
+- arduino:web_ui: {}
+icon: 🐱

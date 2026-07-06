@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webcam Stream</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff; 
+}
+
+/* แถบบน */
+.top-bar {
+    height: 60px;
+    background: #1e3a8a;
+}
+
+/* แถบล่าง */
+.bottom-bar {
+    height: 60px;
+    background: #111827; 
+}
+
+
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+iframe {
+    width: 80%;
+    height: 80%;
+    border: none;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-bar"></div>
+
+<div class="content">
+    <iframe id="videoStream"></iframe>
+</div>
+
+<div class="bottom-bar"></div>
+
+<script>
+const iframe = document.getElementById('videoStream');
+const currentHostname = window.location.hostname;
+iframe.src = `http://${currentHostname}:4912/embed`;
+</script>
+
+</body>
+</html>
